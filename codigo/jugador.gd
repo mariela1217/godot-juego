@@ -10,20 +10,14 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		# click izquierdo → mover a la izquierda mientras se mantenga pulsado
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
-				mouse_direction = -1
-			else:
-				mouse_direction = 0
+			mouse_direction = -1 if event.pressed else 0
 
 		# click derecho → mover a la derecha mientras se mantenga pulsado
-		# y doble click derecho → salto
+		# doble click derecho → salto vertical
 		elif event.button_index == MOUSE_BUTTON_RIGHT:
-			if event.pressed:
-				mouse_direction = 1
-				if event.double_click:
-					jump_requested_by_mouse = true
-			else:
-				mouse_direction = 0
+			mouse_direction = 1 if event.pressed else 0
+			if event.double_click:  # propiedad correcta en Godot 4
+				jump_requested_by_mouse = true
 
 func _physics_process(delta: float) -> void:
 	# gravedad
@@ -35,21 +29,20 @@ func _physics_process(delta: float) -> void:
 	if direction == 0 and mouse_direction != 0:
 		direction = mouse_direction
 
-	# movimiento horizontal
+	# movimiento horizontal (también en el aire)
 	if direction != 0:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * delta)
 
-	# salto por teclado (ej: tecla espacio)
+	# salto por teclado
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# salto por doble click derecho
+	# salto por doble click derecho → solo vertical
 	if jump_requested_by_mouse:
 		if is_on_floor():
-			velocity.y = JUMP_VELOCITY
+			velocity.y = JUMP_VELOCITY  # solo sube, no cambia x
 		jump_requested_by_mouse = false
 
-	# aplicar movimiento
 	move_and_slide()
