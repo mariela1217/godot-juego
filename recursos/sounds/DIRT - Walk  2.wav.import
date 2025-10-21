@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://5xk355wv63oi"
+path="res://.godot/imported/DIRT - Walk  2.wav-00c923cbf6c02ef2b0b43beb12b3aa63.sample"
+
+[deps]
+
+source_file="res://recursos/sounds/DIRT - Walk  2.wav"
+dest_files=["res://.godot/imported/DIRT - Walk  2.wav-00c923cbf6c02ef2b0b43beb12b3aa63.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
