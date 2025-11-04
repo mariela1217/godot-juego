@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://btdgvg4pjq4t0"]
+[gd_scene load_steps=19 format=3 uid="uid://btdgvg4pjq4t0"]
 
 [ext_resource type="PackedScene" uid="uid://coi0a2qqp5cpq" path="res://escenas/hud.tscn" id="1_0u1ji"]
 [ext_resource type="Script" path="res://codigo/game_manager.gd" id="1_rxj1d"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bnv6o021wfdpj" path="res://escenas/zona_de_muerte.tscn" id="5_ipxgb"]
 [ext_resource type="PackedScene" uid="uid://crlh83skja4hy" path="res://escenas/enemigo.tscn" id="7_al82p"]
 [ext_resource type="FontFile" uid="uid://cgi5imfbaa2k3" path="res://recursos/fonts/PixelOperator8.ttf" id="8_ia8qx"]
+[ext_resource type="PackedScene" uid="uid://dfys8avodpbdd" path="res://escenas/meta.tscn" id="11_w2yhq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1m7r2"]
 texture = ExtResource("2_7bqjk")
@@ -422,3 +423,6 @@ theme_override_fonts/font = ExtResource("8_ia8qx")
 theme_override_font_sizes/font_size = 8
 text = "¡Lo conseguiste!"
 horizontal_alignment = 1
+
+[node name="Meta" parent="." instance=ExtResource("11_w2yhq")]
+position = Vector2(2674, 39)
