@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://8g7ulwoh2bc6"]
+
+[ext_resource type="Theme" uid="uid://de78ie52dsoqv" path="res://recursos/ui/tema.tres" id="1_knol6"]
+[ext_resource type="Script" uid="uid://dwv4gcsg2pmgi" path="res://codigo/derrota.gd" id="1_xj83g"]
+[ext_resource type="PackedScene" uid="uid://btdgvg4pjq4t0" path="res://escenas/escena_01.tscn" id="2_oufvg"]
+[ext_resource type="Script" uid="uid://btamolw43kopb" path="res://codigo/audio_button.gd" id="2_xj83g"]
+[ext_resource type="AudioStream" uid="uid://c3coy4bt6bb03" path="res://recursos/ui/toggle_001.ogg" id="3_oufvg"]
+[ext_resource type="FontFile" uid="uid://de0s68clxc0el" path="res://recursos/fonts/PixelOperator8-Bold.ttf" id="4_y3gwu"]
+
+[node name="derrota" type="CanvasLayer"]
+script = ExtResource("1_xj83g")
+escena_a_cargar = ExtResource("2_oufvg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -54.0
+offset_right = 105.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+
+[node name="BotonComenzar" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_knol6")
+text = "Volver a jugar"
+script = ExtResource("2_xj83g")
+sonido = ExtResource("3_oufvg")
+metadata/_custom_type_script = "uid://btamolw43kopb"
+
+[node name="BotonContinuar" type="Button" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_knol6")
+disabled = true
+text = "Continuar"
+script = ExtResource("2_xj83g")
+sonido = ExtResource("3_oufvg")
+metadata/_custom_type_script = "uid://btamolw43kopb"
+
+[node name="BotonSalir" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("1_knol6")
+text = "Salir"
+script = ExtResource("2_xj83g")
+sonido = ExtResource("3_oufvg")
+esperar_a_final_sonido = true
+metadata/_custom_type_script = "uid://btamolw43kopb"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_oufvg")
+bus = &"UI"
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -352.0
+offset_top = 63.0
+offset_right = 358.0
+offset_bottom = 127.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_y3gwu")
+theme_override_font_sizes/font_size = 64
+text = "Has perdido!"
+
+[connection signal="boton_pulsado" from="VBoxContainer/BotonComenzar" to="." method="_on_boton_comenzar_pressed"]
+[connection signal="boton_pulsado" from="VBoxContainer/BotonContinuar" to="." method="_on_boton_continuar_pressed"]
+[connection signal="boton_pulsado" from="VBoxContainer/BotonSalir" to="." method="_on_boton_salir_pressed"]

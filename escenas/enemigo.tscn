@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://crlh83skja4hy"]
 
-[ext_resource type="Script" path="res://codigo/enemigo.gd" id="1_7x5s2"]
+[ext_resource type="Script" uid="uid://iykn8irlu8yc" path="res://codigo/enemigo.gd" id="1_7x5s2"]
 [ext_resource type="Texture2D" uid="uid://dosibfrjfviu6" path="res://recursos/sprites/slime_green.png" id="1_jsajv"]
 [ext_resource type="PackedScene" uid="uid://bnv6o021wfdpj" path="res://escenas/zona_de_muerte.tscn" id="2_6lody"]
 

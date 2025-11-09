@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctkfwkj67j7mq"]
 
 [ext_resource type="AudioStream" uid="uid://bu83o1s6xilg1" path="res://recursos/music/time_for_adventure.mp3" id="1_winr6"]
-[ext_resource type="Script" path="res://codigo/musica.gd" id="2_wyljp"]
+[ext_resource type="Script" uid="uid://dhyvcbp16iqpi" path="res://codigo/musica.gd" id="2_wyljp"]
 
 [node name="Musica" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_winr6")
 autoplay = true
+max_distance = 7000.0
 bus = &"Musica"
 script = ExtResource("2_wyljp")

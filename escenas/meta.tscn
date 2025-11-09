@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfys8avodpbdd"]
 
 [ext_resource type="Texture2D" uid="uid://djpv8j66x1elj" path="res://recursos/sprites/Meta.png" id="1_jr5s7"]
-[ext_resource type="Script" path="res://codigo/meta.gd" id="2_a4qgb"]
+[ext_resource type="Script" uid="uid://bjgegknv2udcp" path="res://codigo/meta.gd" id="2_a4qgb"]
 [ext_resource type="AudioStream" uid="uid://dje8v4ux2nbhq" path="res://recursos/music/meta.wav" id="3_4wkw1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vngf7"]

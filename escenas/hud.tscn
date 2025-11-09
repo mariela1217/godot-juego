@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://coi0a2qqp5cpq"]
 
 [ext_resource type="Texture2D" uid="uid://bdggco2dx7gdk" path="res://recursos/sprites/coin.png" id="1_butsc"]
-[ext_resource type="Script" path="res://codigo/hud.gd" id="1_ra7f1"]
+[ext_resource type="Script" uid="uid://c7ll04f1wgyy" path="res://codigo/hud.gd" id="1_ra7f1"]
 [ext_resource type="FontFile" uid="uid://de0s68clxc0el" path="res://recursos/fonts/PixelOperator8-Bold.ttf" id="2_tilo0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwqin"]
